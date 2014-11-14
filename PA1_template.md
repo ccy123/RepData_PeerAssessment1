@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
 
 ## Loading and preprocessing the data
@@ -19,7 +24,7 @@ daily_steps<- tapply(data$steps, data$date, FUN=sum, na.rm=TRUE)
 hist(daily_steps)
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
 
 Calculate and report the mean and median total number of steps taken per day
 *mean*
@@ -50,7 +55,7 @@ interval_average <- aggregate(list(steps=data$steps), by=list(interval=data$inte
 plot(interval_average$interval, interval_average$steps, type="l")
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
 
 Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -106,7 +111,7 @@ daily_steps<- tapply(filled_data$steps, filled_data$date, FUN=sum, na.rm=TRUE)
 hist(daily_steps)
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-10-1.png) 
+![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png) 
 
 Calculate and report the mean and median total number of steps taken per day
 *mean*
@@ -151,4 +156,4 @@ xyplot(steps ~ interval | as.factor(week), data = averages,type = "l", layout = 
     xlab = "Interval", ylab = "Number of Steps")
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-14-1.png) 
+![plot of chunk unnamed-chunk-14](figure/unnamed-chunk-14-1.png) 
